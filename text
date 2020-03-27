@@ -1,0 +1,32 @@
+ok  依存ライブラリはpackage.jsonで管理する
+ok  node_modulesは .gitignore でgit管理から外す
+ok  APIサーバーはexpressで実装する
+  以下の機能を実装する
+    APIサーバーに「GET /api/comments」でリクエストを投げると コメント一覧 がレスポンス値として返ってくる
+    APIサーバーに「POST /api/comments」でリクエストを投げると 新規にコメントを1件作成して、作成したコメント1件 がレスポンス値として返ってくる
+    APIサーバーに「PUT /api/comments/:id」でリクエストを投げると idに紐づくコメントを1件更新して、更新したコメント1件 がレスポンス値として返ってくる
+    APIサーバーに「DELETE /api/comments/:id」でリクエストを投げると idに紐づくコメントを1件削除して、削除したコメント1件 がレスポンス値として返ってくる
+    コメント(Model)が持つ情報は以下の通り
+ok    id : 数値。新しいコメントを作成するたびにid値が1増えて、他のコメントとidが重複しないようにする。(オートインクリメント)
+ok    username : 文字列
+ok    body : 文字列
+ok    createdAt : Date。コメントを作成した時点の日付をセットする
+ ok   updatedAt : Date。コメントを作成した時点と更新した時点の日付をセットする
+    「POST /api/comments」「PUT /api/comments/:id」を実行する際は、username、 bodyの送信を必須とする。
+    username が送信データに含まれていない場合は、usernameは必須です というエラーメッセージを返し、ステータスコードには400を返す
+    body が送信データに含まれていない場合は、bodyは必須です というエラーメッセージを返す、ステータスコードには400を返す
+  git flowを意識して機能別にブランチを切って作業を進める
+  masterブランチから、開発ブランチとして「develop」ブランチを作成する
+  developブランチから機能毎にfeatureブランチを作成する(以下のfeatureブランチ名は一例)
+  feature/setup-env : 開発を始めるのに必要なライブラリや設定などを行う
+  feature/create-a-comment-model : Comment Modelの用意
+  feature/implement-the-find-all-method-in-the-model : Comment Modelにコメント一覧を取得するメソッドを用意する
+  feature/implement-the-create-method-in-the-model : Comment Modelに新規コメントを追加するメソッドを用意する
+  feature/implement-the-update-method-in-the-model : Comment Modelに既存コメント1件を更新するメソッドを用意する
+  feature/implement-the-remove-method-in-the-model : Comment Modelに既存コメント1件を削除するメソッドを用意する
+  feature/implement-api-for-the-get-comments : 「GET /api/comments」にリクエストを投げたらコメント一覧が返ってくるAPIを実装する
+  feature/implement-api-for-the-post-comments : 「POST /api/comments」にリクエストを投げたら新規にコメントを1件作成して、作成したコメントデータが返ってくるAPIを実装する
+  feature/implement-api-for-the-put-comments-id : 「PUT /api/comments/:id」にリクエストを投げたらidに紐づくコメントが更新されるAPIを実装する
+  feature/implement-api-for-the-delete-comments-id : 「DELETE /api/comments/:id」にリクエストを投げたらidに紐づくコメントが削除されるAPIを実装する
+  Modelの機能、APIの機能全てのテストを実装する
+  実装後は、Postmanやテストコードを使って意図通り動いていることを確認する
