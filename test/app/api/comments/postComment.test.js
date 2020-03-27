@@ -41,7 +41,7 @@ describe("test [POST /api/commnets]", () => {
       message: "bodyは必須です"
     });
   });
-  it("title,bodyを送ったら成功する", async () => {
+  it("username,bodyを送ったら成功する", async () => {
     const oldComments = await getComments();
 
     const postData = {
