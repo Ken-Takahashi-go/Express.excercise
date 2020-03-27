@@ -23,5 +23,19 @@ for (let i = 0; i < 5; i++) {
 module.exports = {
   findAll: () => {
     return comments.slice();
+  },
+  create: ({ username, body }) => {
+    if (!username) {
+      throw new Error("usernameは必須です");
+    }
+    if (!body) {
+      throw new Error("bodyは必須です");
+    }
+    const comment = new Comment({
+      username,
+      body
+    });
+    comments.push(comment);
+    return comment;
   }
 };

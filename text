@@ -2,7 +2,7 @@ ok  依存ライブラリはpackage.jsonで管理する
 ok  node_modulesは .gitignore でgit管理から外す
 ok  APIサーバーはexpressで実装する
   以下の機能を実装する
-    APIサーバーに「GET /api/comments」でリクエストを投げると コメント一覧 がレスポンス値として返ってくる
+ok   APIサーバーに「GET /api/comments」でリクエストを投げると コメント一覧 がレスポンス値として返ってくる
     APIサーバーに「POST /api/comments」でリクエストを投げると 新規にコメントを1件作成して、作成したコメント1件 がレスポンス値として返ってくる
     APIサーバーに「PUT /api/comments/:id」でリクエストを投げると idに紐づくコメントを1件更新して、更新したコメント1件 がレスポンス値として返ってくる
     APIサーバーに「DELETE /api/comments/:id」でリクエストを投げると idに紐づくコメントを1件削除して、削除したコメント1件 がレスポンス値として返ってくる
